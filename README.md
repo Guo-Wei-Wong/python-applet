@@ -1,2 +1,2 @@
 # python-applet
-local modify test
+just some interesting program
