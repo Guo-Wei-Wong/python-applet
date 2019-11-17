@@ -1,2 +1,2 @@
 # python-applet
-test pull
+local modify test
