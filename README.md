@@ -1,2 +1,2 @@
 # python-applet
-just some interesting program
+Some useful programs help training TensorFlow and Keras.
