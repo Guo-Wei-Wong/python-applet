@@ -1,0 +1,17 @@
+def auto_delete_hdf5_save_history(history,newpath):
+    file_list = glob_all(newpath)
+    for i in range(len(file_list)-1):
+        file_list.sort()
+        if (len(file_list)-1) == 0:
+            print('Only had Best Weight , Cound not delete !')
+        else:
+            os.remove(file_list[i])
+            
+    plt.plot(history.history['loss'])
+    plt.plot(history.history['val_loss'])
+    plt.title('model loss')
+    plt.ylabel('loss')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'test'], loc='upper left')
+    plt.savefig(newpath+'plt-loss.png')
+    plt.clf()
