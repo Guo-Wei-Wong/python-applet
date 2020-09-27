@@ -1,3 +1,15 @@
+import glob
+import matplotlib.pylab as plt
+
+def glob_all(dir_path):
+    file_list = glob.glob(os.path.join(dir_path,'*.hdf5'))
+    inside = os.listdir(dir_path)
+    for dir_name in inside:
+        if os.path.isdir(os.path.join(dir_path,dir_name)):
+            file_list.extend(glob_all(os.path.join(dir_path,dir_name)))
+    return file_list
+
+
 def auto_delete_hdf5_save_history(history,newpath):
     file_list = glob_all(newpath)
     for i in range(len(file_list)-1):
